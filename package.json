@@ -8,7 +8,12 @@
     "dev": "nodemon src/app/server.js",
     "start": "node src/app/server.js"
   },
-  "keywords": ["courier", "backend", "express", "mongodb"],
+  "keywords": [
+    "courier",
+    "backend",
+    "express",
+    "mongodb"
+  ],
   "author": "Your Name",
   "license": "ISC",
   "dependencies": {
@@ -17,6 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "json2csv": "^6.0.0-alpha.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.5"
   },
