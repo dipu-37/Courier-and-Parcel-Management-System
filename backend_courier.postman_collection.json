@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "48eaca0e-d05d-424d-bc10-5c543c3078b8",
+		"name": "backend_courier",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41012032"
+	},
+	"item": [
+		{
+			"name": "parcels",
+			"item": [
+				{
+					"name": "create_parcel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODlhNjM2YTViYjRhMDlkMWFkZTIxZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1MTQ0NywiZXhwIjoxNzU0NDU2MjQ3fQ.oYVhGWSJ31ff7VHR2SNwqENEEiREPjqVcJrnStSo1ic",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pickupAddress\": \"Mirpur, Dhaka\",\r\n  \"deliveryAddress\": \"Banani, Dhaka\",\r\n  \"parcelSize\": \"medium\",\r\n  \"parcelType\": \"Documents\",\r\n  \"paymentType\": \"cod\",\r\n  \"codAmount\": 200\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parcels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parcels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view parcel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODlhNjM2YTViYjRhMDlkMWFkZTIxZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1MTQ0NywiZXhwIjoxNzU0NDU2MjQ3fQ.oYVhGWSJ31ff7VHR2SNwqENEEiREPjqVcJrnStSo1ic",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parcels/mine",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"mine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "track parcel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODlhNjM2YTViYjRhMDlkMWFkZTIxZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1MTQ0NywiZXhwIjoxNzU0NDU2MjQ3fQ.oYVhGWSJ31ff7VHR2SNwqENEEiREPjqVcJrnStSo1ic",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parcels/6889b074063655e192681100/track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parcels",
+								"6889b074063655e192681100",
+								"track"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6889a636a5bb4a09d1ade21f",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "agent",
+			"item": [
+				{
+					"name": "View assigned parcels",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODliNjUzZTU4OTI5YzcxYzJkMWE5YiIsInJvbGUiOiJhZ2VudCIsImlhdCI6MTc1Mzg1NTYyMywiZXhwIjoxNzU0NDYwNDIzfQ.04AkCEsrV4ccgsLUAFFcjeBDZjKVe1pt6kkN8fWzsNo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/agent/parcels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"agent",
+								"parcels"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update parcel status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODliNjUzZTU4OTI5YzcxYzJkMWE5YiIsInJvbGUiOiJhZ2VudCIsImlhdCI6MTc1Mzg1NTYyMywiZXhwIjoxNzU0NDYwNDIzfQ.04AkCEsrV4ccgsLUAFFcjeBDZjKVe1pt6kkN8fWzsNo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"In Transit\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/agent/parcels/6889b074063655e192681100/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"agent",
+								"parcels",
+								"6889b074063655e192681100",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update coordinates",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODliNjUzZTU4OTI5YzcxYzJkMWE5YiIsInJvbGUiOiJhZ2VudCIsImlhdCI6MTc1Mzg1NTYyMywiZXhwIjoxNzU0NDYwNDIzfQ.04AkCEsrV4ccgsLUAFFcjeBDZjKVe1pt6kkN8fWzsNo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"lat\": 23.8103,\r\n  \"lng\": 90.4125\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/agent/parcels/6889b074063655e192681100/coordinates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"agent",
+								"parcels",
+								"6889b074063655e192681100",
+								"coordinates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "Dashboard metrics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/parcels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"parcels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign agent to parcel",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"agentId\": \"6889b653e58929c71c2d1a9b\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/parcels/6889b074063655e192681100/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"parcels",
+								"6889b074063655e192681100",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export parcel data as CSV",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/admin/parcels/export/csv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"parcels",
+								"export",
+								"csv"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					],
+					"query": [
+						{
+							"key": "searchTerm",
+							"value": "azi",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "fields",
+							"value": "email",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login_user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ODljMGU0OWExNDBkMDViOGEzZmJkMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1Mzg1ODI3NiwiZXhwIjoxNzU0NDYzMDc2fQ.b-p0o6x-Jenjbjwd47eG6LzhxP85_EpUrtkBwsDGZ-M",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
