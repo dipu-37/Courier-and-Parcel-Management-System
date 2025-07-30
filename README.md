@@ -1,43 +1,95 @@
-🎓 Assignment Submission - MERN Stack Internship Project
-👨‍💻 Project Title: Courier and Parcel Management System (Back-End)
-🕸️ Tech Stack: Node.js, Express.js, MongoDB, Mongoose, JWT, Role-Based Access
+# 🚚 Courier and Parcel Management System - Backend
 
-✅ Functional Requirements Implemented:
-- Role-based authentication (Admin, Delivery Agent, Customer)
-- JWT-based login & secure API access
-- Customer registration & login APIs
-- Book Parcel API with customer ID
-- View booking history for logged-in customer
-- Track parcel (GET coordinates)
-- Admin dashboard: view metrics, assign agents, export CSV
-- Delivery Agent: view assigned parcels, update parcel status & coordinates
+This is the **Backend API** for the MERN Stack Assignment on a Courier and Parcel Management System.
 
+> ✅ Assignment for Internship - 6sense Technologies
 
-🚀 Key API Endpoints:
+---
 
-🔐 Auth APIs
-POST /api/v1/auth/register
-POST /api/v1/auth/login
-📦 Parcel APIs (Customer)
+## 🌐 Live Server
+
+`http://your-backend-link.onrender.com`
+
+---
+
+## 📁 Technologies Used
+
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- Role-based Access Control (RBAC)
+- Postman (for API testing)
+- Nodemon
+
+---
+
+## 👥 User Roles
+
+- **Admin**
+- **Delivery Agent**
+- **Customer**
+
+---
+
+## 🔐 Auth APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/v1/auth/register` | Register user with role |
+| POST | `/api/v1/auth/login` | Login and receive token |
+
+---
+
+## 📦 Parcel APIs (Customer)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/v1/parcels` | Book a parcel |
+| GET | `/api/v1/parcels/mine` | View own parcel history |
+| GET | `/api/v1/parcels/:id/track` | Track parcel (geo-coordinates) |
+
+---
+
+## 🚛 Delivery Agent APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/agent/parcels` | View assigned parcels |
+| PATCH | `/api/v1/agent/parcels/:id/status` | Update parcel status |
+| PATCH | `/api/v1/agent/parcels/:id/coordinates` | Update location coordinates |
+
+---
+
+## 🧑‍💼 Admin APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/admin/overview` | Dashboard analytics |
+| PATCH | `/api/v1/admin/parcels/:id/assign` | Assign agent to parcel |
+| GET | `/api/v1/admin/users` | View all users |
+| GET | `/api/v1/admin/parcels` | View all parcels |
+| GET | `/api/v1/admin/reports/export` | Export parcel data (CSV) |
+
+---
+
+## 🛡️ Role-Based Access Middleware
+
+- `protect`: Checks JWT token
+- `authorizeRoles('role')`: Restricts route based on role
+
+---
+
+## 📬 Test Data Example
+
+```json
 POST /api/v1/parcels
-GET /api/v1/parcels/mine
-GET /api/v1/parcels/:id/track
-
-
-🚚 Agent APIs
-GET /api/v1/agent/parcels
-PATCH /api/v1/agent/parcels/:id/status
-PATCH /api/v1/agent/parcels/:id/coordinates
-
-
-🛠️ Admin APIs
-GET /api/v1/admin/metrics
-GET /api/v1/admin/users
-PATCH /api/v1/admin/parcels/:id/assign
-GET /api/v1/admin/parcels
-GET /api/v1/admin/export/csv
-
-
-🔐 Middleware
-- Auth Middleware (protect route using JWT)
-- Role-based Middleware (Admin, Customer, Agent)
+Authorization: Bearer <token>
+{
+  "pickupAddress": "Mirpur, Dhaka",
+  "deliveryAddress": "Banani, Dhaka",
+  "parcelSize": "medium",
+  "parcelType": "Documents",
+  "paymentType": "cod",
+  "codAmount": 200
+}
