@@ -1,8 +1,8 @@
-# 🚚 Courier and Parcel Management System - Backend
+#  Courier and Parcel Management System - Backend
 
 This is the **Backend API** for the MERN Stack Assignment on a Courier and Parcel Management System.
 
-> ✅ Assignment for Internship - 6sense Technologies
+> Assignment: Software Developer (MERN) – Excel Technologies Ltd.
 
 ---
 
@@ -32,7 +32,7 @@ This is the **Backend API** for the MERN Stack Assignment on a Courier and Parce
 
 ---
 
-## 🔐 Auth APIs
+##  Auth APIs
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -41,7 +41,7 @@ This is the **Backend API** for the MERN Stack Assignment on a Courier and Parce
 
 ---
 
-## 📦 Parcel APIs (Customer)
+##  Parcel APIs (Customer)
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -51,7 +51,7 @@ This is the **Backend API** for the MERN Stack Assignment on a Courier and Parce
 
 ---
 
-## 🚛 Delivery Agent APIs
+##  Delivery Agent APIs
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -61,7 +61,7 @@ This is the **Backend API** for the MERN Stack Assignment on a Courier and Parce
 
 ---
 
-## 🧑‍💼 Admin APIs
+##  Admin APIs
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -73,14 +73,14 @@ This is the **Backend API** for the MERN Stack Assignment on a Courier and Parce
 
 ---
 
-## 🛡️ Role-Based Access Middleware
+##  Role-Based Access Middleware
 
 - `protect`: Checks JWT token
 - `authorizeRoles('role')`: Restricts route based on role
 
 ---
 
-## 📬 Test Data Example
+## Test Data Example
 
 ```json
 POST /api/v1/parcels
