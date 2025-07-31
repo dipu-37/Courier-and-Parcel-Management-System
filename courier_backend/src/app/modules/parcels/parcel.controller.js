@@ -60,3 +60,31 @@ export const trackParcel = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+// ✅ Update Parcel Status (Admin / Agent)
+export const updateParcelStatus = async (req, res) => {
+  try {
+    const { status } = req.body;
+    const { id } = req.params;
+
+    if (!status) {
+      return res.status(400).json({ message: 'Status is required' });
+    }
+
+    const parcel = await Parcel.findByIdAndUpdate(id, { status }, { new: true });
+
+    if (!parcel) {
+      return res.status(404).json({ message: 'Parcel not found' });
+    }
+
+    // ✅ Emit real-time status update to parcel room
+    req.io.to(id).emit("statusUpdated", {
+      parcelId: id,
+      newStatus: status,
+    });
+
+    res.status(200).json({ success: true, message: 'Status updated', parcel });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};

@@ -16,4 +16,6 @@ router.get('/mine', authorizeRoles('customer','admin'), getMyParcels);
 // Track parcel (map location)
 router.get('/:id/track', authorizeRoles('customer','admin'), trackParcel);
 
+router.patch('/:id/status', updateParcelStatus); // 👈 New route
+
 export const ParcelRoutes = router;
